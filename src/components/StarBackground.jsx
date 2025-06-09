@@ -17,6 +17,7 @@ useEffect(() => {
 
   const handleResize = () => {
     generateStars();
+    //after resizing stars generate again for different screens
   };
 
   window.addEventListener("resize", handleResize);

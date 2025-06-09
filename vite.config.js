@@ -8,7 +8,7 @@ import path from 'path'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    port: 3002,
+    port: 3000,
     strictPort: true, // Optional: ensures Vite fails if port 3002 is in use
   },
   resolve: {
