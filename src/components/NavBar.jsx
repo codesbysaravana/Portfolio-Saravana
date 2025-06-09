@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { href } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 //nav items ---> objects inside represenying each diff links
@@ -37,7 +38,7 @@ export const NavBar = () => {
             >
                 {/* logo of portfolio */}
                 <span className='relative z-10'>
-                    <span className='text-glow text-foreground'> Saravana Priyan </span> Portfolio
+                    <span className='text-glow text-foreground'> Saravana Priyan </span>{" "} Portfolio
                 </span>
             </a>
             
@@ -55,6 +56,15 @@ export const NavBar = () => {
         </div>
 
             {/* mobile nav */} {/* //vertical no horizontal */}
+          {/* if its true sets to false and vice versa */}
+          <button 
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="md:hidden p-2 text-foreground z-50"
+            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+            >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
           <div className={cn("fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
             "transition-all duration-300 md:hidden", //hide in medium screen md
             isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -65,6 +75,7 @@ export const NavBar = () => {
                     key={key}
                     href={item.href}
                     className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
                     >
                     {item.name}
                     </a>
