@@ -3,12 +3,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { Home } from './pages/Home.jsx'
 import NotFound from './pages/NotFound.jsx'
-import { Toaster } from './components/ui/Toaster.jsx'
+//import { Toaster } from './components/ui/toaster.jsx'
 
 const App = () => {
   return (
     <>
-      <Toaster />
+      {/* <Toaster /> */}
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
